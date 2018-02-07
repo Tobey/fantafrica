@@ -19,5 +19,4 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^connect4/', include('connect4.urls', namespace='connect4')),
 ]

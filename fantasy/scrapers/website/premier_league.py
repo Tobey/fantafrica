@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import requests
 import requests_cache
 from fantasy import models
-requests_cache.install_cache()
+requests_cache.uninstall_cache()
 
 
 league = 'Premier League'

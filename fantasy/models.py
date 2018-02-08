@@ -6,9 +6,14 @@ from django.db import models
 class Team(models.Model):
     name = models.CharField(max_length=100)
     league = models.ForeignKey('League', related_name='teams')
+    reference_id = models.CharField(max_length=10)
+    logo = models.CharField(max_length=200)
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        unique_together = ('reference_id', 'league')
 
 
 class Player(models.Model):
@@ -16,13 +21,14 @@ class Player(models.Model):
     name = models.CharField(max_length=100)
     number = models.CharField(max_length=100)
     position = models.CharField(max_length=100)
+    image = models.CharField(max_length=200)
 
     def __str__(self):
         return self.name
 
 
 class League(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
 
     def __str__(self):
         return self.name

@@ -6,7 +6,7 @@ from django.db import models
 class Team(models.Model):
     name = models.CharField(max_length=100)
     league = models.ForeignKey('League', related_name='teams')
-    reference_id = models.CharField(max_length=10)
+    reference_id = models.CharField(max_length=20)
     logo = models.CharField(max_length=200)
 
     def __str__(self):

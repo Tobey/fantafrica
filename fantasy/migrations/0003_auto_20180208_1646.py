@@ -18,13 +18,13 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='player',
             name='image',
-            field=models.CharField(default=datetime.datetime(2018, 2, 8, 16, 46, 38, 726000, tzinfo=utc), max_length=200),
+            field=models.CharField(default='', max_length=200),
             preserve_default=False,
         ),
         migrations.AddField(
             model_name='team',
             name='reference_id',
-            field=models.CharField(default=django.utils.timezone.now, max_length=10),
+            field=models.CharField(default='', max_length=10),
             preserve_default=False,
         ),
         migrations.AlterField(

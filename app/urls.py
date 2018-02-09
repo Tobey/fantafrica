@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from fantasy.views import HomeView
+from fantasy.views import TeamView
+
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^play/', HomeView.as_view()),
+    url(r'^players/.*', TeamView.as_view())
 ]

@@ -22,6 +22,6 @@ from fantasy.views import TeamView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^play/', HomeView.as_view()),
-    url(r'^players/.*', TeamView.as_view())
+    url(r'^players/.*', TeamView.as_view()),
+    url(r'', HomeView.as_view()),
 ]
